@@ -15,7 +15,7 @@
 			console.log('ERROR:' + res.status);
 			return;
 		}
-		console.log(res);
+		console.log(res.body);
 	})
 
 	//on click new
