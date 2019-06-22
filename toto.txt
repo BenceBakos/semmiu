@@ -1,0 +1,2 @@
+-search in one line, based on medium.com, same font-family, font size as <p>
+-share halvány, kissebb - same size as <p>

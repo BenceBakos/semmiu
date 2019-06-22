@@ -3,37 +3,55 @@
 	<title>Semmiújság</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="style.css" type="text/css">
-	<link rel="stylesheet" href="base.css" type="text/css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="css/base.css" type="text/css">
+	<link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <body>
 	<header id="header">
 		<div id="hero">
-			semmiujság
+			<h1>
+				semmi újság
+				<br>
+				....
+			</h1>
+			<h3>Rólam</h3>
 		</div>
-		<div id="about">
-			Rólam
 		</div>
-		<div id="about">
-			<input id="search" type="text">
-			<input id="keywords" type="button" value="Keresés">
+		<div id="search">
+			<input id="search-keywords" type="text" placeholder="Keresés" value="">
+			<i class="material-icons text">search</i>
 		</div>
 	</header>
 	<main>
-		<section id="new-wrapper">
-			<button id="new">Frissítés</button>
+		<section style="display:none;" id="new-wrapper">
+			<button id="new">Ugrás a legfrissebbhez</button>
 		</section>
 		<section id="feed">
-			
+		
 		</section>
 		<section id="old-wrapper">
 			<button id="older">Régebbiek betöltése...</button>
 		</section>
-	</main>
-		
+	</main>		
+	
+	<section id="modal-share">
+		<span id="modal-share-x">X</span>
+		<input id="modal-share-link" type="text" value="Link....">
+		<button id="modal-share-copy"> Másolás vágólapra</button>
+	</section>
+	
+	<section id="modal-search">
+		<span id="modal-search-x">X</span>
+		<div id="modal-search-results">
+		</div>
+	</section>
+	
 	<footer id="footer">
 		
 	</footer>
-	<script src="script.js"></script>
+	<script src="js/feed.js"></script>
+	<script src="js/search.js"></script>
+	<script src="js/share.js"></script>
 </body>
 </html>
