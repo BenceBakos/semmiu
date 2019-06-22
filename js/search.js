@@ -43,13 +43,13 @@
 
 		let resultPosts = [];
 		//get postlist
-		fetch('/postList.txt').then(function (res) {
+		fetch(location.pathname+'postList.txt').then(function (res) {
 			return res.text()
 		}).then(function (postListTxt) {
 			//search in every post content
 			let postList = postListTxt.split('\n').map(item => item.trim()) //split by line-breaks
 				.filter(item => item.length > 1) //filter empty lines
-				.map(item => 'posts/' + item + '.txt'); //append ful path to filenames
+				.map(item => location.pathname+'posts/' + item + '.txt'); //append ful path to filenames
 
 			//for each all post content
 			Promise.all(postList.map(u => fetch(u))).then(responses =>
