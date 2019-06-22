@@ -64,10 +64,15 @@
 					if (keywordsInString(keywords, post.text))
 						resultPosts.push(post);
 				});
-				searchResults.innerHTML = "";
-				resultPosts.forEach(function (post) {
-					searchResults.appendChild(resultElement(post));
-				})
+				
+				if (resultPosts.length==0){
+					searchResults.innerHTML = "Nincs találat.";
+				}else{
+					searchResults.innerHTML = "";
+					resultPosts.forEach(function (post) {
+						searchResults.appendChild(resultElement(post));
+					});
+				}
 				
 			});
 
