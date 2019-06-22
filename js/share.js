@@ -5,7 +5,8 @@
 	//on click share
 	document.body.addEventListener('click', function (e) {
 		if (e.target.classList.contains('post-share')) {
-			let post = e.target.parentElement;
+			let post = e.target.parentElement.parentElement;
+			console.log(post);
 			shareLink.value = location.origin + "#" + post.id;
 		}
 	});

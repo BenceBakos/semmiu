@@ -10,42 +10,43 @@
 <body>
 	<header id="header">
 		<div id="hero">
-			<h1>
+			<h1 class="noselect">
 				semmi újság
 				<br>
 				....
 			</h1>
-			<h3>Rólam</h3>
+			<h3 class="noselect">Rólam</h3>
 		</div>
 		</div>
 		<div id="search">
-			<input id="search-keywords" type="text" placeholder="Keresés" value="">
-			<i class="material-icons text">search</i>
+			<input id="search-keywords" class="open" type="text" placeholder="Keresés" value="">
+			<i id="search-submit" class="material-icons text noselect">search</i>
 		</div>
+		<section id="modal-search">
+			<i class="material-icons" id="modal-search-x">close</i>
+			<div id="modal-search-results">
+			</div>
+		</section>
 	</header>
 	<main>
 		<section style="display:none;" id="new-wrapper">
-			<button id="new">Ugrás a legfrissebbhez</button>
+			<span class="noselect" id="new">Ugrás a legfrissebbhez</span>
 		</section>
 		<section id="feed">
 		
 		</section>
 		<section id="old-wrapper">
-			<button id="older">Régebbiek betöltése...</button>
+			<span class="noselect" id="older">Régebbiek betöltése</span>
 		</section>
 	</main>		
 	
 	<section id="modal-share">
-		<span id="modal-share-x">X</span>
+		<i class="material-icons" id="modal-share-x">close</i>
 		<input id="modal-share-link" type="text" value="Link....">
 		<button id="modal-share-copy"> Másolás vágólapra</button>
 	</section>
 	
-	<section id="modal-search">
-		<span id="modal-search-x">X</span>
-		<div id="modal-search-results">
-		</div>
-	</section>
+
 	
 	<footer id="footer">
 		

@@ -5,7 +5,7 @@
 		post.innerHTML = `
 			<h3 class="post-title">${title}</h3>
 			<p class="post-content">${content}</p>
-			<p class="post-date">${date} <i class="material-icons share-icon">share</i></p>
+			<p class="post-date">${date} <i class="material-icons share-icon post-share">share</i></p>
 			
 		`;
 		post.id = id;

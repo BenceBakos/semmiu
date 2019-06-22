@@ -13,29 +13,30 @@
 		return false;
 	}
 	function resultElement(post) {
-		let postText=post.text;
+		let postText = post.text;
 		let splitted = postText.split('\n');
 		let title = splitted[0];
 		let date = splitted[1];
-		let content = postText.replace(title, '').replace(date, '').trim().substring(0,100);
-		let resEl=document.createElement('div');
-		resEl.innerHTML=`
-			<h2><a href="${location.origin}#${post.hash}">${title}</a></h2>
+		let content = postText.replace(title, '').replace(date, '').trim().substring(0, 100);
+		let resEl = document.createElement('div');
+		resEl.innerHTML = `
+			<h2><a class="result-link" href="${location.origin}#${post.hash}">${title}</a></h2>
 			<h3>${date}</h3>
 			<p>${content}...</p>
 		`;
+		return resEl;
 	}
 	//hide results
-	searchX.addEventListener('click',function(){
-		searchModal.style.display='none';
+	searchX.addEventListener('click', function () {
+		searchModal.style.display = 'none';
 	});
-	
-	submitInput.addEventListener('click', function () {
+	function submitSearch() {
 		//clear search
 		searchResults.innerHTML = "Keresés folyamatban...";
-		//show modal
-		searchModal.style.display="block"
+		searchModal.style.display = "block";
 		let keywords = keywordsInput.value.toLowerCase().split(' ');
+		keywordsInput.placeholder="Keresett kifejezés: "+keywordsInput.value;
+		keywordsInput.value="";
 		//filter out ignorable words
 		let ignore = ['az', 'és'];
 		keywords = keywords.filter(kw => !ignore.includes(kw)).map(item => item.trim());
@@ -63,14 +64,41 @@
 					if (keywordsInString(keywords, post.text))
 						resultPosts.push(post);
 				});
-
-				resultPosts.forEach(function(post){
+				searchResults.innerHTML = "";
+				resultPosts.forEach(function (post) {
 					searchResults.appendChild(resultElement(post));
 				})
+				
 			});
 
 		});
+	}
+	//submit on click search
+	submitInput.addEventListener('click', submitSearch);
+	//submit on enter
+	keywordsInput.addEventListener('keyup', function onEvent(e) {
+		//search
+		if (e.keyCode === 13) {
+			submitSearch();
+		}else{
+			if (keywordsInput.value.length>=1)
+				submitInput.style.display="inline-block";
+			else
+				submitInput.style.display="none";
+		}
+		
 	});
-
+	//click result
+	document.body.addEventListener('click',function(e){
+		if (e.target.classList.contains('result-link')){
+			console.log(e.target.href);
+			window.location.replace(e.target.href);
+			location.reload();
+		}
+		
+	})
+	//remove this few lines
+	//keywordsInput.value="lorem ipsum"
+	//submitInput.click();
 }
 	());

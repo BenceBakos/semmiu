@@ -21,14 +21,24 @@ body{
 	font-family:OpenSans-Light;
 	background-color:#dbffd6;
 }
+
 #feed{
 	padding-top:4rem;
+}
+#old-wrapper,#new-wrapper{
+	text-align:center;
+	padding:1rem;
+	box-sizing:border-box;
+}
+#new,#older{
+	font-family:OpenSans-Bold;
+	cursor: pointer;
 }
 /*HEADER*/
 
 #hero h1{
 	padding-top: 2rem;
-    font-size: 3rem;
+    font-size: 3.5rem;
     line-height: 1rem;
 }
 #hero h3{
@@ -68,25 +78,31 @@ body{
 	
 }
 #modal-search{
+	background-color:inherit;
+}
+#modal-share-x{
 	position:absolute;
-	left:0;top:0;
+	right:0;
+	top:0;
+}
+#modal-search-x{
+	float:right;
 }
 .share-icon{
 	font-size:1.3rem;
 	float:right;
 }
 /*SEARCH*/
+
 #search-keywords{
 	border:none;
 	background:transparent;
+	width:90%;
+}
+#search-keywords:focus{
+	outline: none;
 }
 
-@keyframes open {
-  0%   {background-color: red;}
-  25%  {background-color: yellow;}
-  50%  {background-color: blue;}
-  100% {background-color: green;}
-}
 
 
 
@@ -97,10 +113,28 @@ body{
 		border-bottom:3px double black;
 		padding-right:4rem;
 	}
+	
+
+	
+}
+
+@media (min-width: 1024px) {
+	#feed{
+		width:80%;
+		margin-left:auto;
+		margin-right:auto;
+	}
+
+	.post{
+		display: inline-block;
+		width: 100%;
+	}
 	#hero{
 		display:inline-block;
 		width:60%;
 		float:left;
+		padding-left:10%;
+		box-sizing:border-box;
 	}
 	#hero h1{
 		padding-top: 2rem;
@@ -119,19 +153,4 @@ body{
 		padding-right:10%;
 		box-sizing:border-box;
 	}
-	
-}
-
-@media (min-width: 1200px) {
-	#feed{
-		width:80%;
-		margin-left:auto;
-		margin-right:auto;
-	}
-
-	.post{
-		display: inline-block;
-		width: 100%;
-	}
-
 }
