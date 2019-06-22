@@ -16,7 +16,7 @@
 	let postList = [],
 	feed = document.getElementById('feed'),
 	lastPostIndex = 0;
-	fetch('/postList.txt').then(function (res) {
+	fetch('postList.txt').then(function (res) {
 		return res.text()
 	}).then(function (postListTxt) {
 		postList = postListTxt.split('\n').map(item => item.trim()).filter(item => item.length > 1);
@@ -32,7 +32,7 @@
 			//load from hash to hashIndex+20
 			let actualPostList = postList.slice(lastPostIndex, lastPostIndex + 20);
 			lastPostIndex+=20;
-			actualPostList = actualPostList.map(item => '/posts/' + item + '.txt');
+			actualPostList = actualPostList.map(item => 'posts/' + item + '.txt');
 			//fetch all
 			Promise.all(actualPostList.map(u => fetch(u))).then(responses =>
 				Promise.all(responses.map(res => res.text()))).then(posts => {
@@ -92,7 +92,7 @@
 		});
 	});
 	document.getElementById('new').addEventListener('click',function(){
-		document.location.href="/";
+		document.location.href="";
 	});
 	
 }
