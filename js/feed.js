@@ -51,7 +51,7 @@
 			//load from first
 			
 			lastPostIndex = 20;
-			Promise.all(postList.slice(0, 20).map(item => '/posts/' + item + '.txt')
+			Promise.all(postList.slice(0, 20).map(item => location.pathname+'posts/' + item + '.txt')
 				.map(u => fetch(u))).then(responses =>
 				Promise.all(responses.map(res => res.text()))).then(posts => {
 				let hashIndex = 0;
@@ -68,7 +68,7 @@
 	});
 	//load olders
 	document.getElementById('older').addEventListener('click', function () {
-		Promise.all(postList.slice(lastPostIndex, lastPostIndex+20).map(item => '/posts/' + item + '.txt')
+		Promise.all(postList.slice(lastPostIndex, lastPostIndex+20).map(item => location.pathname+'posts/' + item + '.txt')
 			.map(u => fetch(u))).then(responses =>
 			Promise.all(responses.map(res => res.text()))).then(posts => {
 			if (lastPostIndex+20>postList.length-1){
