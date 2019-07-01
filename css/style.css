@@ -68,22 +68,17 @@ body{
 	padding-bottom:4rem;
 	box-sizing:border-box;
 }
+.post-share-link{
+	display:none;
+	float:right;
+}
 /*MODALS*/
-#modal-share,#modal-search{
+#modal-search{
 	display:none;
 }
-#modal-share{
-	position:absolute;
-	left:0;top:0;
-	
-}
+
 #modal-search{
 	background-color:inherit;
-}
-#modal-share-x{
-	position:absolute;
-	right:0;
-	top:0;
 }
 #modal-search-x{
 	float:right;
@@ -92,6 +87,7 @@ body{
 	font-size:1.3rem;
 	float:right;
 }
+
 /*SEARCH*/
 
 #search-keywords{

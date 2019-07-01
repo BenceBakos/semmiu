@@ -1,13 +1,29 @@
 (function () {
-	
 	function createPostElement(title, date, content, id) {
 		let post = document.createElement('div');
+		let link=location.origin + "#" + id;
 		post.innerHTML = `
 			<h3 class="post-title">${title}</h3>
 			<p class="post-content">${content}</p>
-			<p class="post-date">${date} <i class="material-icons share-icon post-share">share</i></p>
-			
+			<p class="post-date">
+				${date}
+				<span id="post-share-link-${id}" class="post-share-link">
+					<input type="text" value="${link}" id="post-share-link-value-${id}">
+					<i class="material-icons post-share-copy noselect">file_copy</i>
+				</span>
+				<i class="material-icons share-icon post-share noselect">share</i>
+			</p>
 		`;
+		//share event
+		post.getElementsByClassName('post-share')[0].addEventListener('click',function(){
+			document.getElementById('post-share-link-'+id).style.display='inline-block';
+		});
+		//copy event
+		post.getElementsByClassName('post-share-copy')[0].addEventListener('click',function(){
+			let linkInp=document.getElementById("post-share-link-value-"+id);
+			linkInp.select();
+			document.execCommand("copy");
+		});
 		post.id = id;
 		post.classList.add('post');
 		return post;
@@ -83,7 +99,8 @@
 				let title = splitted[0];
 				let date = splitted[1];
 				let content = postText.replace(title, '').replace(date, '').trim();
-				feed.appendChild(createPostElement(title, date, content, postList[hashIndex]));
+				console.log(lastPostIndex+hashIndex);
+				feed.appendChild(createPostElement(title, date, content, postList[lastPostIndex-20+hashIndex]));
 				hashIndex++;
 			});
 			//hide older button if no more older
