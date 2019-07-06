@@ -53,7 +53,7 @@ body{
 }
 
 /*POST*/
-.post-date{
+.post-foo{
 }
 .post-title{
 	clear:both;
@@ -72,6 +72,15 @@ body{
 	display:none;
 	float:right;
 }
+.post-share-link-inp{
+	outline:none;
+	border:none;
+	background-color:#dbffd6;
+}
+.post-foo *{
+	font-size:1rem !important;
+}
+
 /*MODALS*/
 #modal-search{
 	display:none;

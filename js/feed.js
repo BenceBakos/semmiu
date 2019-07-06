@@ -5,18 +5,21 @@
 		post.innerHTML = `
 			<h3 class="post-title">${title}</h3>
 			<p class="post-content">${content}</p>
-			<p class="post-date">
+			<p class="post-foo">
 				${date}
 				<span id="post-share-link-${id}" class="post-share-link">
-					<input type="text" value="${link}" id="post-share-link-value-${id}">
+					<input type="text" value="${link}" class="post-share-link-inp" id="post-share-link-value-${id}">
 					<i class="material-icons post-share-copy noselect">file_copy</i>
 				</span>
-				<i class="material-icons share-icon post-share noselect">share</i>
+				<span>
+					<i class="material-icons share-icon post-share noselect">share</i>
+				</span>
 			</p>
 		`;
 		//share event
-		post.getElementsByClassName('post-share')[0].addEventListener('click',function(){
+		post.getElementsByClassName('post-share')[0].addEventListener('click',function(e){
 			document.getElementById('post-share-link-'+id).style.display='inline-block';
+			e.target.remove();
 		});
 		//copy event
 		post.getElementsByClassName('post-share-copy')[0].addEventListener('click',function(){
