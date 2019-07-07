@@ -32,7 +32,7 @@
 	});
 	function submitSearch() {
 		//clear search
-		searchResults.innerHTML = "Keresés folyamatban...";
+		searchResults.innerHTML = '<div style="width:100%;text-align:center;"><div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div></div>';
 		searchModal.style.display = "block";
 		let keywords = keywordsInput.value.toLowerCase().split(' ');
 		keywordsInput.placeholder="Keresett kifejezés: "+keywordsInput.value;
