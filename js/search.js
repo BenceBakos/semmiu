@@ -60,10 +60,11 @@
 							hash: res.url.substring(res.url.lastIndexOf("/") + 1, res.url.lastIndexOf(".txt"))
 						}
 					}))).then(posts => {
-				posts.forEach(function (post) {
-					if (keywordsInString(keywords, post.text))
-						resultPosts.push(post);
-				});
+				let maxP=posts.length>=8?8:posts.length;
+				for (let i=0;i<maxP;i++){
+					if (keywordsInString(keywords, posts[i].text))
+						resultPosts.push(posts[i]);
+				}
 				
 				if (resultPosts.length==0){
 					searchResults.innerHTML = "Nincs találat.";

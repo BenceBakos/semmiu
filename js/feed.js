@@ -87,10 +87,9 @@
 						hashIndex++;
 					});
 				}).then(function(){
+					document.getElementById('rolam').style.marginTop='0px';
 					if (location.hash == '#rolam') {
-						document.getElementById('rolam').scrollIntoView({
-							behavior: 'smooth'
-						});
+						document.getElementById('rolam').scrollIntoView();
 					}
 				});
 			}
@@ -116,10 +115,13 @@
 				feed.appendChild(createPostElement(title, date, content, postList[lastPostIndex - 20 + hashIndex]));
 				hashIndex++;
 			});
+			
+			
 			//hide older button if no more older
 			if (lastPostIndex == postList.length)
 				document.getElementById('old-wrapper').style.display = 'none';
 		});
+		document.getElementById('rolam').style.marginTop='0px';
 	});
 	document.getElementById('new').addEventListener('click', function () {
 		document.location.href = "/";
