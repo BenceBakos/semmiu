@@ -75,7 +75,7 @@
 						let splitted = postText.split('\n');
 						let title = splitted[0];
 						let date = splitted[1];
-						let content = postText.replace(title, '').replace(date, '').trim();
+						let content = postText.replace(title, '').replace(date, '').trim().replace(/\n/g,'<br>');
 						feed.appendChild(createPostElement(title, date, content, postList[hashIndex]));
 						hashIndex++;
 					});
@@ -93,7 +93,7 @@
 						let splitted = postText.split('\n');
 						let title = splitted[0];
 						let date = splitted[1];
-						let content = postText.replace(title, '').replace(date, '').trim();
+						let content = postText.replace(title, '').replace(date, '').trim().replace(/\n/g,'<br>');
 						feed.appendChild(createPostElement(title, date, content, postList[hashIndex]));
 						hashIndex++;
 					});
@@ -121,8 +121,7 @@
 				let splitted = postText.split('\n');
 				let title = splitted[0];
 				let date = splitted[1];
-				let content = postText.replace(title, '').replace(date, '').trim();
-				console.log(lastPostIndex + hashIndex);
+				let content = postText.replace(title, '').replace(date, '').trim().replace(/\n/g,'<br>');
 				feed.appendChild(createPostElement(title, date, content, postList[lastPostIndex - 20 + hashIndex]));
 				hashIndex++;
 			});
