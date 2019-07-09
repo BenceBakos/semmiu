@@ -47,7 +47,7 @@
 	feed = document.getElementById('feed'),
 	lastPostIndex = 0
 		fetch(location.pathname + 'postList.txt').then(function (res) {
-			return res.text()
+			return res.text();
 		}).then(function (postListTxt) {
 			postList = postListTxt.split('\n').map(item => item.trim()).filter(item => item.length > 1);
 			let hash = location.hash;
