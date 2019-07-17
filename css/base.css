@@ -12,7 +12,7 @@ h2{
 h3{
 	font-size:1.4rem;	
 }
-p,input,b,i,span,.text{
+p,input,b,i,span,.text,figure{
 	font-size:1rem;
 }
 h1,h2,h3,h4{
@@ -31,6 +31,9 @@ h1,h2,h3,h4{
 .nostyle{
 	color:black;
 	text-decoration:none;
+}
+.nostyle:hover{
+	color:gray;
 }
 /*breakpoints*/
 

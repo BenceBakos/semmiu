@@ -237,12 +237,33 @@ body{
 /*footer*/
 #rolam{
 	margin-top:100vh;
+	padding-left:2rem;
+	padding-right:2rem;
+}
+#rolam_text{
+	
+}
+#profile{
+	padding-top:2rem;
+}
+#profile figcaption{
+	padding-left:5rem;
+}
+#profile figcaption span{
+	display:block;
+}
+#profile img{
+	float:left;
+	border:1px solid white;
+	width:4rem;
+	height:auto;
 }
 #copyrights{
+	padding-top:2rem;
 	font-size:13px !important;
 	text-align:justify;
+	clear:both;
 }
-
 /*DEVICE SIZE SPECIFIC*/
 
 @media (min-width: 600px) {
@@ -256,6 +277,15 @@ body{
 }
 
 @media (min-width: 1024px) {
+	#profile{
+		float:right;
+		display:inline-block;
+		
+	}
+	#rolam_text,#rolam_title{
+		float:left;
+		width:60%;
+	}
 	#feed{
 		width:60%;
 		margin-left:auto;
