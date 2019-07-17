@@ -237,17 +237,26 @@ body{
 /*footer*/
 #rolam{
 	margin-top:100vh;
+	padding-top:3rem;
 	padding-left:2rem;
 	padding-right:2rem;
 }
+#rolam_title{
+	padding-bottom:1rem;
+}
 #rolam_text{
-	
+	text-align:justify;
 }
 #profile{
 	padding-top:2rem;
+	height:5rem;
 }
 #profile figcaption{
 	padding-left:5rem;
+	padding-top:1rem;
+	padding-bottom:1rem;
+	height:5rem;
+	box-sizing:border-box;
 }
 #profile figcaption span{
 	display:block;
@@ -255,8 +264,9 @@ body{
 #profile img{
 	float:left;
 	border:1px solid white;
-	width:4rem;
-	height:auto;
+	border-radius:50%;
+	width:auto;
+	height:5rem;
 }
 #copyrights{
 	padding-top:2rem;
