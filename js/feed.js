@@ -1,4 +1,27 @@
 (function () {
+	function addShareButtons(postElement,id){
+		//share event
+		postElement.getElementsByClassName('post-share')[0].addEventListener('click', function (e) {
+			document.getElementById('post-share-link-' + id).style.display = 'inline-block';
+			e.target.remove();
+		});
+		//copy event
+		postElement.getElementsByClassName('post-share-copy')[0].addEventListener('click', function () {
+			let linkInp = document.getElementById("post-share-link-value-" + id);
+			linkInp.select();
+			document.execCommand("copy");
+			
+			// Get the snackbar DIV
+			let toast = document.getElementById("snackbar");
+			// Add the "show" class to DIV
+			toast.className = "show";
+			// After 3 seconds, remove the show class from DIV
+			setTimeout(function () {
+				toast.className = toast.className.replace("show", "");
+			}, 3000);
+		});
+	}
+	
 	function createPostElement(title, date, content, id) {
 		let post = document.createElement('div');
 		let link = location.origin + "#" + id;
@@ -16,28 +39,10 @@
 				</span>
 			</p>
 		`;
-		//share event
-		post.getElementsByClassName('post-share')[0].addEventListener('click', function (e) {
-			document.getElementById('post-share-link-' + id).style.display = 'inline-block';
-			e.target.remove();
-		});
-		//copy event
-		post.getElementsByClassName('post-share-copy')[0].addEventListener('click', function () {
-			let linkInp = document.getElementById("post-share-link-value-" + id);
-			linkInp.select();
-			document.execCommand("copy");
-			
-			// Get the snackbar DIV
-			let toast = document.getElementById("snackbar");
-			// Add the "show" class to DIV
-			toast.className = "show";
-			// After 3 seconds, remove the show class from DIV
-			setTimeout(function () {
-				toast.className = toast.className.replace("show", "");
-			}, 3000);
-			
-			
-		});
+		//share
+		addShareButtons(post,id);
+		
+		
 		post.id = id;
 		post.classList.add('post');
 		return post;

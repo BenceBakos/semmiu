@@ -67,7 +67,7 @@
 				}
 				
 				if (resultPosts.length==0){
-					searchResults.innerHTML = "Nincs találat.";
+					searchResults.innerHTML = '<div id="no-result-alert">Nincs találat.</div>';
 				}else{
 					searchResults.innerHTML = "";
 					resultPosts.forEach(function (post) {
@@ -99,7 +99,7 @@
 		if (e.target.classList.contains('result-link')){
 			console.log(e.target.href);
 			window.location.replace(e.target.href);
-			location.reload();
+			//location.reload();
 		}
 		
 	})
