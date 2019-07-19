@@ -1,6 +1,4 @@
-<<<<<<< HEAD
 ﻿chopin
-=======
 ﻿szep-nyugodtan
 nyitott-szekreny
 locsolunk
@@ -9,7 +7,6 @@ mutatvanyosok
 diakmunka
 fukasza
 tegla
->>>>>>> 98bc2ed41f94488a604c4c93dbdcf5e20fcaa7ca
 paradicsom
 tarzan
 elfekvő
