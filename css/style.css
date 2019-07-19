@@ -68,7 +68,7 @@ body{
 }
 .post-content{
 	padding:1rem;
-	text-align: justify;
+	text-align: justify !important;
 }
 .post-foo{
 	padding:1rem;
@@ -108,7 +108,10 @@ body{
 	text-align:right;
 	padding-top:3rem;
 }
-
+#no-result-alert{
+	text-align:center;
+	width:100%;
+}
 /* The snackbar - position it at the bottom and in the middle of the screen */
 #snackbar {
   visibility: hidden; /* Hidden by default. Visible on click */
@@ -237,9 +240,43 @@ body{
 /*footer*/
 #rolam{
 	margin-top:100vh;
+	padding-top:3rem;
+	padding-left:2rem;
+	padding-right:2rem;
 }
-
-
+#rolam_title{
+	padding-bottom:1rem;
+}
+#rolam_text{
+	text-align:justify;
+}
+#profile{
+	padding-top:2rem;
+	height:5rem;
+}
+#profile figcaption{
+	padding-left:5rem;
+	padding-top:1rem;
+	padding-bottom:1rem;
+	height:5rem;
+	box-sizing:border-box;
+}
+#profile figcaption span{
+	display:block;
+}
+#profile img{
+	float:left;
+	border:1px solid white;
+	border-radius:50%;
+	width:auto;
+	height:5rem;
+}
+#copyrights{
+	padding-top:2rem;
+	font-size:13px !important;
+	text-align:justify;
+	clear:both;
+}
 /*DEVICE SIZE SPECIFIC*/
 
 @media (min-width: 600px) {
@@ -247,12 +284,18 @@ body{
 		border-bottom:1px solid black;
 		padding-right:4rem;
 	}
-	
-
-	
 }
 
 @media (min-width: 1024px) {
+	#profile{
+		float:right;
+		display:inline-block;
+		
+	}
+	#rolam_text,#rolam_title{
+		float:left;
+		width:60%;
+	}
 	#feed{
 		width:60%;
 		margin-left:auto;

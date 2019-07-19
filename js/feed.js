@@ -1,4 +1,27 @@
 (function () {
+	function addShareButtons(postElement,id){
+		//share event
+		postElement.getElementsByClassName('post-share')[0].addEventListener('click', function (e) {
+			document.getElementById('post-share-link-' + id).style.display = 'inline-block';
+			e.target.remove();
+		});
+		//copy event
+		postElement.getElementsByClassName('post-share-copy')[0].addEventListener('click', function () {
+			let linkInp = document.getElementById("post-share-link-value-" + id);
+			linkInp.select();
+			document.execCommand("copy");
+			
+			// Get the snackbar DIV
+			let toast = document.getElementById("snackbar");
+			// Add the "show" class to DIV
+			toast.className = "show";
+			// After 3 seconds, remove the show class from DIV
+			setTimeout(function () {
+				toast.className = toast.className.replace("show", "");
+			}, 3000);
+		});
+	}
+	
 	function createPostElement(title, date, content, id) {
 		let post = document.createElement('div');
 		let link = location.origin + "#" + id;
@@ -16,28 +39,10 @@
 				</span>
 			</p>
 		`;
-		//share event
-		post.getElementsByClassName('post-share')[0].addEventListener('click', function (e) {
-			document.getElementById('post-share-link-' + id).style.display = 'inline-block';
-			e.target.remove();
-		});
-		//copy event
-		post.getElementsByClassName('post-share-copy')[0].addEventListener('click', function () {
-			let linkInp = document.getElementById("post-share-link-value-" + id);
-			linkInp.select();
-			document.execCommand("copy");
-			
-			// Get the snackbar DIV
-			let toast = document.getElementById("snackbar");
-			// Add the "show" class to DIV
-			toast.className = "show";
-			// After 3 seconds, remove the show class from DIV
-			setTimeout(function () {
-				toast.className = toast.className.replace("show", "");
-			}, 3000);
-			
-			
-		});
+		//share
+		addShareButtons(post,id);
+		
+		
 		post.id = id;
 		post.classList.add('post');
 		return post;
@@ -47,7 +52,7 @@
 	feed = document.getElementById('feed'),
 	lastPostIndex = 0
 		fetch(location.pathname + 'postList.txt').then(function (res) {
-			return res.text()
+			return res.text();
 		}).then(function (postListTxt) {
 			postList = postListTxt.split('\n').map(item => item.trim()).filter(item => item.length > 1);
 			let hash = location.hash;
@@ -75,7 +80,7 @@
 						let splitted = postText.split('\n');
 						let title = splitted[0];
 						let date = splitted[1];
-						let content = postText.replace(title, '').replace(date, '').trim();
+						let content = postText.replace(title, '').replace(date, '').trim().replace(/\n/g,'<br>');
 						feed.appendChild(createPostElement(title, date, content, postList[hashIndex]));
 						hashIndex++;
 					});
@@ -93,7 +98,7 @@
 						let splitted = postText.split('\n');
 						let title = splitted[0];
 						let date = splitted[1];
-						let content = postText.replace(title, '').replace(date, '').trim();
+						let content = postText.replace(title, '').replace(date, '').trim().replace(/\n/g,'<br>');
 						feed.appendChild(createPostElement(title, date, content, postList[hashIndex]));
 						hashIndex++;
 					});
@@ -121,8 +126,7 @@
 				let splitted = postText.split('\n');
 				let title = splitted[0];
 				let date = splitted[1];
-				let content = postText.replace(title, '').replace(date, '').trim();
-				console.log(lastPostIndex + hashIndex);
+				let content = postText.replace(title, '').replace(date, '').trim().replace(/\n/g,'<br>');
 				feed.appendChild(createPostElement(title, date, content, postList[lastPostIndex - 20 + hashIndex]));
 				hashIndex++;
 			});
