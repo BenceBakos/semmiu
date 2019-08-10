@@ -1,4 +1,5 @@
-﻿baratsag
+﻿teknosok
+baratsag
 borzalom
 kellegyhaz
 oshonos
