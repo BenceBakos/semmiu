@@ -1,4 +1,5 @@
-﻿teknosok
+﻿harminceves
+teknosok
 baratsag
 borzalom
 kellegyhaz
