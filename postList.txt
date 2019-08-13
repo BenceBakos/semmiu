@@ -1,4 +1,5 @@
-﻿teknosok
+﻿gyerek
+teknosok
 baratsag
 borzalom
 kellegyhaz
