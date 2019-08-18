@@ -1,4 +1,5 @@
-﻿gyerek
+﻿kard
+gyerek
 teknosok
 baratsag
 borzalom
