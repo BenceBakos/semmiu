@@ -1,4 +1,5 @@
-﻿biztos
+﻿tolvaj
+biztos
 fenyek
 lolegel
 paprika
