@@ -1,4 +1,5 @@
-﻿alca
+﻿csakcsinald
+alca
 tolvaj
 biztos
 fenyek
