@@ -1,4 +1,5 @@
-﻿csakcsinald
+﻿eltort
+csakcsinald
 alca
 tolvaj
 biztos
