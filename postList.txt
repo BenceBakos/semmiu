@@ -1,4 +1,5 @@
-﻿koboj
+﻿remeny
+koboj
 kecskeol
 iz
 gerinctelen
