@@ -1,4 +1,5 @@
-﻿bazar
+﻿figura
+bazar
 megszepul
 nenezd
 remeny
