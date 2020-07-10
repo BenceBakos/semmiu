@@ -1,4 +1,5 @@
-﻿figura
+﻿becsben
+figura
 bazar
 megszepul
 nenezd
