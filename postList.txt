@@ -1,4 +1,5 @@
-﻿anyane
+﻿allatok
+anyane
 tobbalaton
 jotett
 szunyog
