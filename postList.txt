@@ -1,4 +1,5 @@
-﻿allatok
+﻿mitkeresel
+allatok
 anyane
 tobbalaton
 jotett
