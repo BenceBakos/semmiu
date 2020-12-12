@@ -1,4 +1,5 @@
-﻿szolal
+﻿tulelo
+szolal
 feri
 delfin
 asit
