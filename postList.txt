@@ -1,4 +1,5 @@
-﻿szinte
+﻿bacsi
+szinte
 tulelo
 szolal
 feri
