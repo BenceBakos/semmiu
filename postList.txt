@@ -1,10 +1,6 @@
 dunna
-<<<<<<< Updated upstream
 sivatag
 kiserlet
-=======
-﻿kiserlet
->>>>>>> Stashed changes
 laposteve
 csalimadar
 bika
